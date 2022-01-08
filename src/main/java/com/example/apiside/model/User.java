@@ -23,6 +23,8 @@ public class User {
 
     private long health;
 
+    private long exp;
+
     private String name;
 
     private String playerImage;

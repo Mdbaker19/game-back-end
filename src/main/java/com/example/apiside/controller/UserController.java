@@ -59,6 +59,7 @@ public class UserController {
     @ResponseBody
     public SaveState saveGame(@RequestBody User userData, @PathVariable long id) {
         SaveState save = (SaveState) Hibernate.unproxy(saveStateRepository.findById(id).orElse(utility.isNewGameSaveState()));
+        userRepository.save(userData);
         try {
             save.setData(objectMapper.writeValueAsString(userData));
         } catch (Exception ex) {

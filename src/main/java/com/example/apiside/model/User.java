@@ -21,6 +21,8 @@ public class User {
 
     private long playerLvl;
 
+    private long health;
+
     private String name;
 
     private String playerImage;

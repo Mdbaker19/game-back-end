@@ -13,6 +13,7 @@ import lombok.RequiredArgsConstructor;
 import org.hibernate.Hibernate;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,6 +23,7 @@ public class DataCreation {
 
     private final ItemRepository itemRepository;
     private final SaveStateRepository saveStateRepository;
+    private final UserRepository userRepository;
     private final UserService userService;
     private final Utility utility;
     private static final String frontEnd = "http://localhost:3000";
@@ -60,6 +62,21 @@ public class DataCreation {
 //        utility.updateSaveStateData(user, saveState);
 
         return item;
+    }
+
+    @PostMapping("/stats/{id}")
+    public HashMap<String, Long> testStatPost(@PathVariable long id) {
+        User user = userRepository.findById(id).get();
+        HashMap<String, Long> stats = user.getStats();
+        if(stats == null) {
+            stats = new HashMap<>();
+            stats.put("Attack", 10L);
+            stats.put("Defense", 9L);
+        }
+        stats.put("Speed", 8L);
+        user.setStats(stats);
+        userRepository.save(user);
+        return stats;
     }
 
 }

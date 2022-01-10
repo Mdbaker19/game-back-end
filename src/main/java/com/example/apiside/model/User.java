@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.HashMap;
 import java.util.List;
 
 @Data
@@ -28,6 +29,9 @@ public class User {
     private String name;
 
     private String playerImage;
+
+    @SuppressWarnings("JpaAttributeTypeInspection")
+    private HashMap<String, Long> stats;
 
 
     @ManyToMany

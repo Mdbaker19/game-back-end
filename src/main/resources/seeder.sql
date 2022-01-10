@@ -2,6 +2,7 @@ create database if not exists apiBase;
 # drop database apiBase;
 use apiBase;
 
+
 insert into users (name, lvl, player_lvl, player_image) values ('matt', 1, 2, 'https://images.ctfassets.net/hrltx12pl8hq/61DiwECVps74bWazF88Cy9/2cc9411d050b8ca50530cf97b3e51c96/Image_Cover.jpg?fit=fill&w=480&h=270');
 insert into users (name, lvl, player_lvl, player_image) values ('mandy', 1, 1, 'https://images.ctfassets.net/hrltx12pl8hq/61DiwECVps74bWazF88Cy9/2cc9411d050b8ca50530cf97b3e51c96/Image_Cover.jpg?fit=fill&w=480&h=270');
 

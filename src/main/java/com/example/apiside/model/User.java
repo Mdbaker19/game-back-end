@@ -28,6 +28,8 @@ public class User {
 
     private String name;
 
+    private long wallet;
+
     private String playerImage;
 
     @SuppressWarnings("JpaAttributeTypeInspection")
